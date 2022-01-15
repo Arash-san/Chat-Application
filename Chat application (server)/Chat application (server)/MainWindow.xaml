@@ -1,0 +1,84 @@
+﻿<Window x:Class="Chat_application__server_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chat_application__server_"
+        mc:Ignorable="d"
+        Title="Chat application server"
+        Height="170.334"
+        Width="320.066">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1"
+                                 StartPoint="0.5,0">
+                <GradientStop Color="#FF512DA8"
+                              Offset="0" />
+                <GradientStop Color="#FF311B92"
+                              Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel>
+            <TextBlock Text="وضعیت سرور"
+                       FontFamily="fonts/#Vazir"
+                       Foreground="White"
+                       TextAlignment="Center"
+                       Height="30"
+                       FontSize="20"
+                       VerticalAlignment="Top"
+                       Margin="0,10,0,0" />
+            <TextBlock Text="غیر فعال"
+                       FontFamily="fonts/#Vazir"
+                       x:Name="statusTextBlock"
+                       Foreground="White"
+                       TextAlignment="Center"
+                       Height="30"
+                       FontSize="15"
+                       Margin="0,10,0,0"
+                       VerticalAlignment="Top" />
+            <Button Content="روشن کردن سرور"
+                    FontFamily="fonts/#Vazir"
+                    Height="40"
+                    Width="130"
+                    Foreground="Black"
+                    FontSize="12"
+                    x:Name="startServerButton"
+                    FontWeight="SemiBold"
+                    Click="startServerButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily"
+                                Value="fonts/#IRANSANS" />
+                        <Setter Property="Background"
+                                Value="LightGray" />
+                        <Setter Property="Cursor"
+                                Value="Hand" />
+                        <Setter Property="Opacity"
+                                Value="0.7" />
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="#e6e6e6" />
+                            </Trigger>
+
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="130"
+                                Height="35"
+                                CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+
+</Window>
